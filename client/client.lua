@@ -1,4 +1,4 @@
-local keybinds = {}
+local keybinds = Config.keybinds
 local inMenu = false
 
 --==== NUI ====--
@@ -38,14 +38,15 @@ end, false)
 TriggerEvent('chat:addSuggestion', '/keybinds', 'Open keybinds menu', {})
 
 --==== Exports ====--
-function addKeybind(name, key)
-	if keybinds[name] then
-		print('Warning: keybind name "' + name + '" is assigned multiple times')
-	end
-	keybinds[name] = key
-end
+-- TODO --
+-- function addKeybind(name, key)
+-- 	if keybinds[name] then
+-- 		print('Warning: keybind name "' + name + '" is assigned multiple times')
+-- 	end
+-- 	keybinds[name] = key
+-- end
 
-exports('AddKeybind', addKeybind)
+-- exports('AddKeybind', addKeybind)
 
 --==== Resource Start/Stop ====--
 AddEventHandler('onResourceStop', function (resourceName)

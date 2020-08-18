@@ -1,6 +1,6 @@
 <template>
-    <div class="flex text-center bg-gray-400 bg-opacity-75 hover:bg-gray-300 pb-1 pt-1">
-        <div class="w-1/2">{{ name }}</div>
+    <div class="flex text-center bg-gray-200 bg-opacity-75 hover:bg-gray-100 pb-1 pt-1 mr-1 ml-1">
+        <div class="w-1/2">{{ description }}</div>
         <div class="w-1/2">{{ curKeybind }}</div>
     </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
     name:'Keybind',
     props: {
-        name: {
+        description: {
             type: String,
             required: true,
         },
