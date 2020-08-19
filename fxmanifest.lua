@@ -16,3 +16,5 @@ files {
 }
 
 ui_page 'client/index.html'
+
+dependency 'chat'
