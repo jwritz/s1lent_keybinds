@@ -1,22 +1,12 @@
 # s1lent_keybinds
 
-## How to add a keybind to a resource
-1. Add the following the the resource's `Config.lua` 
+## Download
+Download the latest release [here](https://github.com/jwritz/s1lent_keybinds/releases)
 
-```
-Config = {} --If does not already exist
-Config.useS1lentKeybinds = true
-Config.Keybinds = {
-  ['Hands Up'] = 'X',
-  ['TODO keybind description'] = 'TODO key',
-}
-```
-2. Add the following to the resource's client lua file
+## Installation
+1. Unzip the downloaded file
+2. Place `s1lent_keybinds` into the `resources` directory
+3. Add `start s1lent_keybinds` to `server.cfg`
 
-```
--- Keybinds
-if Config.useS1lentKeybinds then
-    for k,v in pairs(Config.Keybinds) do
-        exports["s1lent_keybinds"]:AddKeybind(k, v)
-    end
-end```
+## How to add keybinds
+See `config.lua` for examples
