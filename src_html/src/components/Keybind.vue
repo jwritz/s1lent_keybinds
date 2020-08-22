@@ -1,5 +1,5 @@
 <template>
-    <div class="flex text-center bg-gray-200 bg-opacity-75 hover:bg-gray-100 pb-1 pt-1 mr-1 ml-1">
+    <div class="flex text-center keybind pb-1 pt-1 mr-1 ml-1">
         <div class="w-1/2">{{ description }}</div>
         <div class="w-1/2">{{ curKeybind }}</div>
     </div>

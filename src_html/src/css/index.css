@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
+
+.main-background {
+    @apply bg-gray-500 bg-opacity-75;
+}
+
+.category-background {
+    @apply bg-gray-400 bg-opacity-75;
+}
+
+.keybind {
+    @apply bg-gray-200 bg-opacity-75;
+}
+
+.keybind:hover {
+    @apply bg-gray-100;
+}
+
 @tailwind utilities;
