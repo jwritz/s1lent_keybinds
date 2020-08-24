@@ -1,6 +1,6 @@
 Config = {}
 
-Config.keybinds = {
+Config.categories = {
     {
         category='General',
         keys={
@@ -13,11 +13,24 @@ Config.keybinds = {
         keys={
             {description='Hazards', key='Backspace'},
         },
+        commands={
+            {description='Switch to a seat', command='/seat', arguments='[seat number]'},
+        },
+    },
+    {
+        category='Help',
+        commands={
+            {description='Open this menu', command='/keybinds', arguments=''},
+            {description='Open this menu', command='/commands', arguments=''},
+        },
     },
     -- {
     --     category='',
     --     keys={
     --         {description='', key=''},
+    --     },
+    --     commands={
+    --         {description='', command='', arguments=''},
     --     },
     -- },
 }

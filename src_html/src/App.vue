@@ -5,19 +5,35 @@
                 <svg class="absolute right-0 top-0 m-1 cursor-pointer" @click="closeUI(true)" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/>
                 </svg>
-                <div class="flex mb-1 text-center font-semibold">
-                    <div class="w-1/2">Description</div>
-                    <div class="w-1/2">Keybind</div>
-                </div>
-                <div class="overflow-y-auto" style="height: 94%" ref="categoryList">
-                    <div v-for="category in keybinds" :key="category.category" class="shadow-lg m-1 mb-2 p-1 pb-2 rounded category-background">
-                        <div class="flex text-left font-medium pb-1 ml-1">
-                            <div>{{ category.category }}</div>
+                <div class="overflow-y-auto pt-5" style="height: 94%" ref="categoryList">
+                    <div v-for="category in keybinds" :key="category.category">
+                        <div v-if="category.keys && category.keys.length > 0" class="shadow-lg m-1 mb-2 p-1 pb-2 rounded category-background">
+                            <div class="flex text-left font-medium pb-1 ml-1">
+                                <div>{{ category.category }} Keybinds</div>
+                            </div>
+                            <hr>
+                            <div class="flex mb-1 text-center font-semibold">
+                                <div class="w-1/2">Description</div>
+                                <div class="w-1/2">Keybind</div>
+                            </div>
+                            <keybind v-for="keybind in category.keys" :key="keybind.description" :description="keybind.description" :keybind="keybind.key"></keybind>
                         </div>
-                        <keybind v-for="keybind in category.keys" :key="keybind.description" :description="keybind.description" :keybind="keybind.key"></keybind>
+
+                        <div v-if="category.commands && category.commands.length > 0" class="shadow-lg m-1 mb-2 p-1 pb-2 rounded category-background">
+                            <div class="flex text-left font-medium pb-1 ml-1">
+                                <div>{{ category.category }} Commands</div>
+                            </div>
+                            <hr>
+                            <div class="flex mb-1 text-center font-semibold">
+                                <div class="w-1/3">Description</div>
+                                <div class="w-1/3">Command</div>
+                                <div class="w-1/3">Arguments</div>
+                            </div>
+                            <command v-for="command in category.commands" :key="command.command" :description="command.description" :command="command.command" :args="command.arguments"></command>
+                        </div>
                     </div>
                     <div v-if="keybindsLength == 0" class="flex text-center keybind pb-1 pt-1 mr-1 ml-1">
-                        <div class="w-full">No keybinds</div>
+                        <div class="w-full">No keybinds or commands</div>
                     </div>
                 </div>
             </div>
@@ -27,23 +43,17 @@
 
 <script>
 import Keybind from './components/Keybind';
+import Command from './components/Command';
 import Nui from './utils/Nui';
 
 export default {
     name: 'app',
     components: {
-        Keybind,
+        Keybind, Command,
     },
     data() {
         return {
-            keybinds: [
-                {
-                    category:'Vehicle',
-                    keys:[
-                        {description:'Hazards', key:'Backspace'},
-                    ],
-                },
-            ],
+            keybinds: [],
             visible: false,
         };
     },
