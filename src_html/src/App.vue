@@ -6,7 +6,7 @@
                     <path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/>
                 </svg>
                 <div class="overflow-y-auto pt-5" style="height: 94%" ref="categoryList">
-                    <div v-for="category in keybinds" :key="category.category">
+                    <div v-for="category in categories" :key="category.category">
                         <div v-if="category.keys && category.keys.length > 0" class="shadow-lg m-1 mb-2 p-1 pb-2 rounded category-background">
                             <div class="flex text-left font-medium pb-1 ml-1">
                                 <div>{{ category.category }} Keybinds</div>
@@ -32,7 +32,7 @@
                             <command v-for="command in category.commands" :key="command.command" :description="command.description" :command="command.command" :args="command.arguments"></command>
                         </div>
                     </div>
-                    <div v-if="keybindsLength == 0" class="flex text-center keybind pb-1 pt-1 mr-1 ml-1">
+                    <div v-if="categoriesLength == 0" class="flex text-center keybind pb-1 pt-1 mr-1 ml-1">
                         <div class="w-full">No keybinds or commands</div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ export default {
     },
     data() {
         return {
-            keybinds: [],
+            categories: [],
             visible: false,
         };
     },
@@ -73,14 +73,14 @@ export default {
         );
     },
     computed: {
-        keybindsLength: function() {
-            return Object.keys(this.keybinds).length;
+        categoriesLength: function() {
+            return Object.keys(this.categories).length;
         },
     },
     methods: {
         setUIVisible(item) {
             if (item.bool) {
-                this.keybinds = item.keybinds;
+                this.categories = item.categories;
                 this.openUI();
             } else {
                 this.closeUI(false);
