@@ -6,7 +6,7 @@
                     <path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/>
                 </svg>
                 <div class="flex mb-1 text-center font-semibold">
-                    <div class="w-1/2">Name</div>
+                    <div class="w-1/2">Description</div>
                     <div class="w-1/2">Keybind</div>
                 </div>
                 <div class="overflow-y-auto" style="height: 94%" ref="categoryList">
