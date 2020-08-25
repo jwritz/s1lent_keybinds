@@ -11,11 +11,11 @@ Download the latest release [here](https://github.com/jwritz/s1lent_keybinds/rel
 
 _The resource must be named exactly_ `s1lent_keybinds` _for the UI to properly work._
 
-## How to add keybinds
+## How to add keybinds/commands
 See `config.lua` for examples
 
-## How to open keybinds menu
-Use command `/keybinds` to open the keybinds menu
+## How to open keybinds/commands menu
+Use command `/keybinds` or `/commands` to open the keybinds/commands menu
 
 ## Screenshot
 ![v0 1 1](https://user-images.githubusercontent.com/29800465/91195168-67ed4880-e6be-11ea-8696-ebd0b92236f6.png)
