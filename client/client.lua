@@ -1,4 +1,4 @@
-local keybinds = Config.keybinds
+local categories = Config.categories
 local inMenu = false
 
 --==== NUI ====--
@@ -8,7 +8,7 @@ function openUI()
 	SendNUIMessage({
 		type = 'setUIVisible',
 		bool = true,
-		keybinds = keybinds,
+		categories = categories,
 	})
 end
 
@@ -23,19 +23,28 @@ function closeUI(fromCommand)
 	end
 end
 
+function onCommand()
+	if not inMenu then
+		openUI()
+	else
+		closeUI(true)
+	end
+end
+
 RegisterNUICallback('closeUI', function(data)
     closeUI(false)
 end)
 
 --==== Commands ====--
 RegisterCommand('keybinds', function(source, args, rawCommand)
-	if not inMenu then
-		openUI()
-	else
-		closeUI(true)
-	end
+	onCommand()
 end, false)
-TriggerEvent('chat:addSuggestion', '/keybinds', 'Open keybinds menu', {})
+TriggerEvent('chat:addSuggestion', '/keybinds', 'Open keybinds/commands menu', {})
+
+RegisterCommand('commands', function(source, args, rawCommand)
+	onCommand()
+end, false)
+TriggerEvent('chat:addSuggestion', '/commands', 'Open keybinds/commands menu', {})
 
 --==== Resource Start/Stop ====--
 AddEventHandler('onResourceStop', function (resourceName)

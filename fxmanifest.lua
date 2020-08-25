@@ -4,7 +4,7 @@ game 'gta5'
 name 's1lent_keybinds'
 author 'S1lentWalrus'
 description 'Keybinds display'
-version '0.1.0'
+version '0.1.1'
 
 client_scripts {
     'config.lua',

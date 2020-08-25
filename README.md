@@ -8,6 +8,8 @@ Download the latest release [here](https://github.com/jwritz/s1lent_keybinds/rel
 2. Place `s1lent_keybinds` into the `resources` directory
 3. Add `start s1lent_keybinds` to `server.cfg`
 
+_The resource must be named exactly_ `s1lent_keybinds` _for the UI to properly work._
+
 ## How to add keybinds
 See `config.lua` for examples
 
@@ -15,7 +17,7 @@ See `config.lua` for examples
 Use command `/keybinds` to open the keybinds menu
 
 ## Screenshot
-![v0 1 0](https://user-images.githubusercontent.com/29800465/90579801-b4032f00-e18c-11ea-8c0a-1a90076f81f3.png)
+![v0 1 1](https://user-images.githubusercontent.com/29800465/91195168-67ed4880-e6be-11ea-8696-ebd0b92236f6.png)
 
 ## Color Customization (Advanced)
 
