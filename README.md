@@ -1,4 +1,5 @@
 # s1lent_keybinds
+Menu to display (default) keybinds and commands. Keybinds/commands can be sorted and displayed in categories, such as Vehicle and General.
 
 ## Download
 Download the latest release [here](https://github.com/jwritz/s1lent_keybinds/releases/latest)
