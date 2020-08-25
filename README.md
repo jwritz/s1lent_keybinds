@@ -8,6 +8,8 @@ Download the latest release [here](https://github.com/jwritz/s1lent_keybinds/rel
 2. Place `s1lent_keybinds` into the `resources` directory
 3. Add `start s1lent_keybinds` to `server.cfg`
 
+_The resource must be named exactly_ `s1lent_keybinds` _for the UI to properly work._
+
 ## How to add keybinds
 See `config.lua` for examples
 
