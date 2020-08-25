@@ -17,7 +17,7 @@ See `config.lua` for examples
 Use command `/keybinds` to open the keybinds menu
 
 ## Screenshot
-![v0 1 0](https://user-images.githubusercontent.com/29800465/90579801-b4032f00-e18c-11ea-8c0a-1a90076f81f3.png)
+![v0 1 1](https://user-images.githubusercontent.com/29800465/91195168-67ed4880-e6be-11ea-8696-ebd0b92236f6.png)
 
 ## Color Customization (Advanced)
 
